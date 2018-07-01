@@ -1,0 +1,11 @@
+name: openio-default
+title: OpenIO default test
+maintainer: Hiroki KUNITAKE
+copyright_email: feuerwerk.des.winters@gmail.com
+license: Apache 2.0
+summary: Verify ansible-role-openio setup
+version: 0.1.0
+inspec_version: '> 2.0'
+supports:
+  - os-family: redhat
+depends: []

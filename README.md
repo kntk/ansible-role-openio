@@ -11,6 +11,13 @@ Wrapper role for installing OpenIO
 - Ansible
   - 2.6.X
 
+for local test
+
+- ruby
+  - 2.5.X
+- [VirtualBox](https://www.virtualbox.org/)
+- [vagrant](https://www.vagrantup.com/)
+
 ## Role Variables
 
 See [defaults](defaults/main.yml)

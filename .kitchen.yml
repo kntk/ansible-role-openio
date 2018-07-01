@@ -1,0 +1,33 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: ansible_push
+  playbook: "tests/test.yml"
+  chef_bootstrap_url : false
+  ansible_config     : "ansible.cfg"
+  diff               : true
+  verbose            : "v"
+<% if ENV['RAW_ARGS'] %>
+  raw_arguments      : "<%= ENV['RAW_ARGS'] %>"
+<% end %>
+<% if ENV['TAGS'] %>
+  tags               : [<%= ENV['TAGS'] %>]
+<% end %>
+<% if ENV['SKIP_TAGS'] %>
+  skip_tags          : [<%= ENV['SKIP_TAGS'] %>]
+<% end %>
+
+verifier:
+  name: inspec
+  inspec_tests:
+  - path: tests/integration/default
+
+platforms:
+  - name: centos7
+    driver:
+      box: "centos/7"
+
+suites:
+  - name: single
